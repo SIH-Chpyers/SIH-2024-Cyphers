@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Child</title>
+    <style>
+      #loading {
+          display: none;
+          width: 25px;
+          height: 25px;
+          border: 5px solid #f3f3f3;
+          border-top: 5px solid #3498db;
+          border-radius: 50%;
+          animation: spin 2s linear infinite;
+          margin: auto;
+      }
+
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+
+      #pdfPreview {
+          display: none;
+          width: 100%;
+          height: 500px;
+          border: 1px solid #ddd;
+          margin-top: 20px;
+      }
+
+      #buttons {
+          display: none;
+          margin-top: 10px;
+      }
+
+      #buttons a, #buttons button {
+          margin-right: 10px;
+          text-decoration: none;
+          color: #3498db;
+          border: 1px solid #3498db;
+          padding: 5px 10px;
+          border-radius: 3px;
+          background-color: white;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+      }
+
+      #buttons a:hover, #buttons button:hover {
+          background-color: #3498db;
+          color: white;
+      }
+    </style>
+</head>
+<body>
+    <h1>Special Child</h1>
+    <p>For The Child With Special Needs</p>
+    <form id="resumeForm" enctype="multipart/form-data">
+        <label for="resume">Upload Your Notes (PDF only):</label>
+        <input type="file" id="resume" name="resume" accept="application/pdf"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="loading"></div>
+    <iframe id="pdfPreview" frameborder="0"></iframe>
+    <div id="buttons">
+        <button id="fullscreen">View Fullscreen</button>
+        <a id="download" href="#" download="response.pdf">Download PDF</a>
+    </div>
+
+    <script>
+      document.getElementById('resumeForm').addEventListener('submit', async (event) => {
+          event.preventDefault();
+          
+          const formData = new FormData();
+          formData.append('resume', document.getElementById('resume').files[0]);
+
+          const loadingElement = document.getElementById('loading');
+          const pdfPreview = document.getElementById('pdfPreview');
+          const buttons = document.getElementById('buttons');
+          const downloadButton = document.getElementById('download');
+
+          loadingElement.style.display = 'block';
+          pdfPreview.style.display = 'none';
+          buttons.style.display = 'none';
+
+          const response = await fetch('/upload', {
+              method: 'POST',
+              body: formData
+          });
+
+          if (response.ok) {
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            pdfPreview.src = url;
+            pdfPreview.style.display = 'block';
+            buttons.style.display = 'block';
+            downloadButton.href = url; // Set the href of the download button
+          } else {
+            alert('Error generating PDF.');
+          }
+
+          loadingElement.style.display = 'none';
+      });
+
+      document.getElementById('fullscreen').addEventListener('click', () => {
+          const pdfPreview = document.getElementById('pdfPreview');
+          if (pdfPreview.requestFullscreen) {
+              pdfPreview.requestFullscreen();
+          } else if (pdfPreview.msRequestFullscreen) {
+              pdfPreview.msRequestFullscreen();
+          } else if (pdfPreview.mozRequestFullScreen) {
+              pdfPreview.mozRequestFullScreen();
+          } else if (pdfPreview.webkitRequestFullscreen) {
+              pdfPreview.webkitRequestFullscreen();
+          }
+      });
+    </script>
+</body>
+</html>
