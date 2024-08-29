@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Child</title>
     <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          padding: 0;
+          background-color: #f9f9f9;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      form {
+          background: #fff;
+          padding: 10px;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          max-width: 380px;
+          margin: auto;
+      }
+
+      label {
+          display: block;
+          margin: 10px 0 5px;
+          font-weight: bold;
+      }
+
+      input[type="file"],
+      input[type="text"] {
+          width: 95%;
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+
+      button[type="submit"] {
+          background-color: #3498db;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+
+      button[type="submit"]:hover {
+          background-color: #2980b9;
+      }
+
       #loading {
           display: none;
           width: 25px;
@@ -13,7 +62,7 @@
           border-top: 5px solid #3498db;
           border-radius: 50%;
           animation: spin 2s linear infinite;
-          margin: auto;
+          margin: 20px auto;
       }
 
       @keyframes spin {
@@ -34,7 +83,8 @@
           margin-top: 10px;
       }
 
-      #buttons a, #buttons button {
+      #buttons a,
+      #buttons button {
           margin-right: 10px;
           text-decoration: none;
           color: #3498db;
@@ -46,7 +96,8 @@
           transition: background-color 0.3s, color 0.3s;
       }
 
-      #buttons a:hover, #buttons button:hover {
+      #buttons a:hover,
+      #buttons button:hover {
           background-color: #3498db;
           color: white;
       }
@@ -55,11 +106,19 @@
 <body>
     <h1>Special Child</h1>
     <p>For The Child With Special Needs</p>
-    <form id="resumeForm" enctype="multipart/form-data">
-        <label for="resume">Upload Your Notes (PDF only):</label>
-        <input type="file" id="resume" name="resume" accept="application/pdf"><br><br>
+    <form id="notesForm" enctype="multipart/form-data">
+        <label for="notes">Upload Your Notes (PDF only):</label>
+        <input type="file" id="notes" name="notes" accept="application/pdf"><br>
+        
+        <label for="image">Upload an Image (optional):</label>
+        <input type="file" id="image" name="image" accept="image/*"><br>
+        
+        <label for="prompt">Enter your prompt (optional, default is English):</label>
+        <input type="text" id="prompt" name="prompt" placeholder="Enter your prompt here"><br>
+        
         <button type="submit">Submit</button>
     </form>
+    
     <div id="loading"></div>
     <iframe id="pdfPreview" frameborder="0"></iframe>
     <div id="buttons">
@@ -68,11 +127,14 @@
     </div>
 
     <script>
-      document.getElementById('resumeForm').addEventListener('submit', async (event) => {
+      document.getElementById('notesForm').addEventListener('submit', async (event) => {
           event.preventDefault();
-          
+
           const formData = new FormData();
-          formData.append('resume', document.getElementById('resume').files[0]);
+          formData.append('notes', document.getElementById('notes').files[0]);
+          formData.append('image', document.getElementById('image').files[0]);
+          const prompt = document.getElementById('prompt').value || 'English';
+          formData.append('prompt', prompt);
 
           const loadingElement = document.getElementById('loading');
           const pdfPreview = document.getElementById('pdfPreview');
@@ -83,23 +145,27 @@
           pdfPreview.style.display = 'none';
           buttons.style.display = 'none';
 
-          const response = await fetch('/upload', {
-              method: 'POST',
-              body: formData
-          });
+          try {
+              const response = await fetch('/upload', {
+                  method: 'POST',
+                  body: formData
+              });
 
-          if (response.ok) {
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            pdfPreview.src = url;
-            pdfPreview.style.display = 'block';
-            buttons.style.display = 'block';
-            downloadButton.href = url; // Set the href of the download button
-          } else {
-            alert('Error generating PDF.');
+              if (response.ok) {
+                  const blob = await response.blob();
+                  const url = URL.createObjectURL(blob);
+                  pdfPreview.src = url;
+                  pdfPreview.style.display = 'block';
+                  buttons.style.display = 'block';
+                  downloadButton.href = url;
+              } else {
+                  alert('Error generating PDF.');
+              }
+          } catch (error) {
+              alert('An error occurred while generating the PDF.');
+          } finally {
+              loadingElement.style.display = 'none';
           }
-
-          loadingElement.style.display = 'none';
       });
 
       document.getElementById('fullscreen').addEventListener('click', () => {
