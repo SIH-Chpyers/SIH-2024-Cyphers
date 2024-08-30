@@ -2,8 +2,7 @@
     height: 100vh;
     max-width: 3000px;
     margin: 0 auto;
-    margin-top: 70px;
-    
+    margin-top: 80px;
     padding: 20px;
     background-color: #ebf3f9; /* Light blue background */
     border-radius: 12px;
@@ -14,7 +13,7 @@
 
 .quiz-page h1 {
     font-size: 2.5rem;
-    color: #0d2c44; /* Dark blue for heading */
+    color: #1e1b4b; /* Updated heading color to dark blue-violet */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -26,16 +25,15 @@
 
 .question-section {
     flex: 2;
-    display:inline;
-    /* flex-direction: column; */
+    display: inline;
 }
 
 .question-container {
-    width:500px;
+    width: 500px;
     background-color: #d9e6f1; /* Very light blue for question area */
     padding: 20px;
-    margin-right:0;
-    margin-left:150px;
+    margin-right: 0;
+    margin-left: 150px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(222, 147, 147, 0.1);
     backdrop-filter: blur(1.5px);
@@ -60,7 +58,6 @@
     align-items: center;
     background-color: #f1f6fb; /* Light blue for options */
     padding: 10px;
-    
     border-radius: 5px;
     border: 1px solid #03497e;
     cursor: pointer;
@@ -74,12 +71,12 @@
 
 .option-text {
     margin-left: 10px;
-    /* background-color: white; */
 }
 
-.option-div{
+.option-div {
     background-color: white;
 }
+
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
@@ -88,7 +85,7 @@
 
 .navigation-buttons button {
     padding: 10px 20px;
-    background-color: #21a3e0; /* Strong blue for navigation buttons */
+    background-color: #14b8a6; /* Updated navigation button color to teal */
     color: white;
     border: none;
     border-radius: 8px;
@@ -108,13 +105,13 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-right:150px;
-    margin-left:0;
+    margin-right: 150px;
+    margin-left: 0;
 }
 
 .sidebar h2 {
     font-size: 1.5rem;
-    color: #184E77; /* Dark blue for sidebar heading */
+    color: #1e1b4b; /* Updated sidebar heading color to dark blue-violet */
     margin-bottom: 10px;
 }
 
@@ -126,7 +123,7 @@
 
 .question-number {
     padding: 10px;
-    background-color: #168AAD; /* Bright blue for question numbers */
+    background-color: #14b8a6; /* Updated question number color to teal */
     border: 2px solid #1E6091;
     border-radius: 5px;
     text-align: center;
@@ -136,7 +133,7 @@
 }
 
 .question-number.answered {
-    background-color: #1A759F; /* Darker blue for answered questions */
+    background-color: #1e1b4b; /* Updated answered question color to dark blue-violet */
     color: #fff;
 }
 
@@ -166,12 +163,12 @@
 }
 
 .not-answered {
-    background-color: #168AAD; /* Bright blue for not answered */
+    background-color: #14b8a6; /* Updated not answered color to teal */
     border: 1px solid #ccc;
 }
 
 .answered {
-    background-color: #1A759F; /* Dark blue for answered */
+    background-color: #1e1b4b; /* Updated answered color to dark blue-violet */
 }
 
 .attempted-info {
