@@ -1,0 +1,57 @@
+.zoom-image:hover {
+    transform: scale(1.03);
+    transition: transform 0.8s ease-in-out;
+  }
+  .home-container {
+    background: url('https://res.cloudinary.com/dlhktanwi/image/upload/v1725026640/bg-hero-banner_hxciul.svg') no-repeat center center/cover;
+    margin-top: 0;
+    height: 100vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    max-width: 100%;
+}
+
+.text-white {
+    font-family: sans-serif;
+    color: white;
+    margin-right: 100px;
+
+    font-size: 5.5rem;
+}
+
+.text-teal-500 {
+    color: rgb(20 184 166);
+}
+
+.text-indigo-950 {
+    color: rgb(30 27 75);
+}
+
+
+
+
+
+.disc{
+color: white;
+    font-size: 1.5rem;
+}
+.mainimgg{
+
+    width: 800px;
+
+}

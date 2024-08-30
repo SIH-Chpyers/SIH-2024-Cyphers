@@ -1,20 +1,20 @@
-Quizpage.css
-
 .quiz-page {
-    max-width: 1000px;
+    height: 100vh;
+    max-width: 3000px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 70px;
+    
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #ebf3f9; /* Light blue background */
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(222, 210, 210, 0.1);
     backdrop-filter: blur(1.5px);
     font-family: 'Arial', sans-serif;
 }
 
 .quiz-page h1 {
     font-size: 2.5rem;
-    color: #241842;
+    color: #0d2c44; /* Dark blue for heading */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -26,21 +26,24 @@ Quizpage.css
 
 .question-section {
     flex: 2;
-    display: flex;
-    flex-direction: column;
+    display:inline;
+    /* flex-direction: column; */
 }
 
 .question-container {
-    background-color: rgba(243, 240, 255, 0.693);
+    width:500px;
+    background-color: #d9e6f1; /* Very light blue for question area */
     padding: 20px;
+    margin-right:0;
+    margin-left:150px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(222, 147, 147, 0.1);
     backdrop-filter: blur(1.5px);
 }
 
 .question-container p {
     font-size: 1.4rem;
-    color: #480577;
+    color: #00477d; /* Medium blue for question text */
     margin-bottom: 20px;
     font-weight: bold;
     line-height: 1.5;
@@ -55,18 +58,28 @@ Quizpage.css
 .options label {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #f1f6fb; /* Light blue for options */
     padding: 10px;
+    
     border-radius: 5px;
-    border: 1px solid #d1c4e9;
+    border: 1px solid #03497e;
     cursor: pointer;
     transition: background-color 0.3s;
+    gap: 10px;
 }
 
 .options label:hover {
-    background-color: rgba(224, 208, 255, 0.9);
+    background-color: #90bee2; /* Slightly darker blue on hover */
 }
 
+.option-text {
+    margin-left: 10px;
+    /* background-color: white; */
+}
+
+.option-div{
+    background-color: white;
+}
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
@@ -75,7 +88,7 @@ Quizpage.css
 
 .navigation-buttons button {
     padding: 10px 20px;
-    background-color: rgba(107, 70, 193, 0.9);
+    background-color: #21a3e0; /* Strong blue for navigation buttons */
     color: white;
     border: none;
     border-radius: 8px;
@@ -85,21 +98,23 @@ Quizpage.css
 }
 
 .navigation-buttons button:disabled {
-    background-color: rgba(107, 70, 193, 0.5);
+    background-color: rgba(33, 175, 241, 0.5); /* Light blue for disabled buttons */
     cursor: not-allowed;
 }
 
 .sidebar {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #d9e6f1; /* Very light blue for the sidebar */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-right:150px;
+    margin-left:0;
 }
 
 .sidebar h2 {
     font-size: 1.5rem;
-    color: #241842;
+    color: #184E77; /* Dark blue for sidebar heading */
     margin-bottom: 10px;
 }
 
@@ -111,20 +126,70 @@ Quizpage.css
 
 .question-number {
     padding: 10px;
-    background-color: #fff;
-    border: 2px solid #d1c4e9;
+    background-color: #168AAD; /* Bright blue for question numbers */
+    border: 2px solid #1E6091;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
+    color: #fff;
 }
 
 .question-number.answered {
-    background-color: rgba(107, 70, 193, 0.7);
+    background-color: #1A759F; /* Darker blue for answered questions */
     color: #fff;
 }
 
 .question-number:hover {
-    background-color: rgba(107, 70, 193, 0.85);
+    background-color: #1E6091; /* Dark blue on hover */
     color: #fff;
+}
+
+.instruction {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.not-answered {
+    background-color: #168AAD; /* Bright blue for not answered */
+    border: 1px solid #ccc;
+}
+
+.answered {
+    background-color: #1A759F; /* Dark blue for answered */
+}
+
+.attempted-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #D4E7F8; /* Light blue background */
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #1E6091;
+}
+
+.attempted-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #184E77; /* Dark blue for text */
+}
+
+.info-label {
+    font-weight: bold;
+    color: #1E6091; /* Medium blue for labels */
 }

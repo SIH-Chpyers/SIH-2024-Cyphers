@@ -1,0 +1,10 @@
+.textOutline0 {
+    transition: transform 0.8s ease-in-out;
+  }
+
+ .textOutline0:hover {
+    transform: scale(1.01);
+  }
+ .active{
+  color: #5f99be;
+ }

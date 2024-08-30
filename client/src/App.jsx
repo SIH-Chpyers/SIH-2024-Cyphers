@@ -12,6 +12,9 @@ import Tts from './components/Tts';
 import Quizz from './components/Quizz';
 import Quizpage from './components/Quizpage';
 import Resultpage from './components/Resultpage';
+import Bulletin from './components/Bulletin';
+import Header from './components/Header';
+import Second from './components/Second';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -23,7 +26,7 @@ function App() {
     },
     {
     path: "/",
-    element: <><Navbar /><Score /></>
+    element: <><Navbar /><Header /><Second /></>
        
   },
     // {
@@ -33,8 +36,12 @@ function App() {
 
 
     {
-      path: "/kk",
-      element: <><Navbar /><KK /></>
+      path: "/response",
+      element: <><Navbar /><Response /></>
+    },
+    {
+      path: "/bulletin",
+      element: <><Navbar /><Bulletin /></>
     },
     {
       path: "/tts",

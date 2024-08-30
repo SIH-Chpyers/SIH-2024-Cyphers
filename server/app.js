@@ -84,13 +84,16 @@ app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'imag
 
     const doc = new PDFDocument();
 
+doc.rect(0, 0, doc.page.width, doc.page.height).fill('#F0FFFF');
 
-    const fontPathRegular = path.join(__dirname, 'fonts', 'Exo-Regular.otf');
-    const fontPathNothing = path.join(__dirname, 'fonts', 'nothing.otf');
-    const fontPathPing = path.join(__dirname, 'fonts', 'Ping.ttf');
-    doc.registerFont('CoolFont', fontPathRegular);
-    doc.registerFont('NothingFont', fontPathNothing);
-    doc.registerFont('Ping', fontPathPing);
+const fontPathRegular = path.join(__dirname, 'fonts', 'Exo-Regular.otf');
+const fontPathNothing = path.join(__dirname, 'fonts', 'nothing.otf');
+const fontPathPing = path.join(__dirname, 'fonts', 'Ping.ttf');
+doc.registerFont('CoolFont', fontPathRegular);
+doc.registerFont('NothingFont', fontPathNothing);
+doc.registerFont('Ping', fontPathPing);
+
+
 
     let pdfData = [];
     doc.on('data', chunk => pdfData.push(chunk));
@@ -101,7 +104,7 @@ app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'imag
       res.send(pdfBuffer);
     });
 
-    const imagePathForPDF = path.join(__dirname, 'photo.jpg');
+    const imagePathForPDF = path.join(__dirname, 'logo.png');
     doc.image(imagePathForPDF, 10, 10, { width: 50 });
     doc.on('pageAdded', () => {
       doc.image(imagePathForPDF, 10, 10, { width: 50 });

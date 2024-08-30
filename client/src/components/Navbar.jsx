@@ -44,7 +44,7 @@ const Navbar = () => {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <a href="/" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1724927077/photo-removebg-preview_mnt1n3.png" alt="SC logo" style={{ width: 65, height: 78, marginRight: 10 }} />
-          <h4 style={{ ...styles.textOutline, fontFamily: "'Comic Sans MS', 'Comic Sans', cursive", margin: 0, color: '#DCE0DF' }}>Special Child</h4>
+          <h4 style={{ ...styles.textOutline, fontFamily: "'Comic Sans MS', 'Comic Sans', cursive", margin: 0, color: '#DCE0DF' }}>BrightWays</h4>
         </a>
       </div>
       <nav className="navbar">
@@ -63,7 +63,7 @@ const Navbar = () => {
             <Link activeClassName="active" to="/score">Bulletin</Link>
           </div>
         </div>
-        <Link activeClassName="active" to="/score">Bulletin</Link>
+        <Link activeClassName="active" to="/bulletin">Bulletin</Link>
         <Link activeClassName="active" to="/tts">About Us</Link>
         <div className="dropdown">
           <Link activeClassName="active" to="/score">Something</Link>
