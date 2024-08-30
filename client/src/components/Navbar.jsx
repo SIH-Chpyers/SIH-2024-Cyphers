@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
         </div>
         <Link activeClassName="active" to="/bulletin">Bulletin</Link>
-        <Link activeClassName="active" to="/tts">About Us</Link>
+        <Link activeClassName="active" to="/about">About Us</Link>
         <div className="dropdown">
           <Link activeClassName="active" to="/score">Something</Link>
         </div>

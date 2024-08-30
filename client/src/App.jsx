@@ -2,7 +2,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 
 import KK from './components/Kk';
-
+import About from './components/About';
 import Score from './components/Score';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -44,8 +44,8 @@ function App() {
       element: <><Navbar /><Bulletin /></>
     },
     {
-      path: "/tts",
-      element: <><Navbar /><Tts /></>
+      path: "/about",
+      element: <><Navbar /><About /></>
     },
 
     {
@@ -112,3 +112,4 @@ export default App
 // }
 
 // export default App;
+
