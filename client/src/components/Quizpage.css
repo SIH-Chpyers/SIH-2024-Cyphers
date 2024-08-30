@@ -1,4 +1,4 @@
-.quiz-page {
+.quiz-page-qu {
     height: 100vh;
     max-width: 3000px;
     margin: 0 auto;
@@ -11,24 +11,24 @@
     font-family: 'Arial', sans-serif;
 }
 
-.quiz-page h1 {
+.quiz-page-qu h1 {
     font-size: 2.5rem;
     color: #1e1b4b; /* Updated heading color to dark blue-violet */
     margin-bottom: 20px;
     text-align: center;
 }
 
-.quiz-container {
+.quiz-container-qu {
     display: flex;
     gap: 20px;
 }
 
-.question-section {
+.question-section-qu {
     flex: 2;
     display: inline;
 }
 
-.question-container {
+.question-container-qu {
     width: 500px;
     background-color: #d9e6f1; /* Very light blue for question area */
     padding: 20px;
@@ -39,7 +39,7 @@
     backdrop-filter: blur(1.5px);
 }
 
-.question-container p {
+.question-container-qu p {
     font-size: 1.4rem;
     color: #00477d; /* Medium blue for question text */
     margin-bottom: 20px;
@@ -47,13 +47,13 @@
     line-height: 1.5;
 }
 
-.options {
+.options-qu {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.options label {
+.options-qu label {
     display: flex;
     align-items: center;
     background-color: #f1f6fb; /* Light blue for options */
@@ -65,25 +65,25 @@
     gap: 10px;
 }
 
-.options label:hover {
+.options-qu label:hover {
     background-color: #90bee2; /* Slightly darker blue on hover */
 }
 
-.option-text {
+.option-text-qu {
     margin-left: 10px;
 }
 
-.option-div {
+.option-div-qu {
     background-color: white;
 }
 
-.navigation-buttons {
+.navigation-buttons-qu {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.navigation-buttons button {
+.navigation-buttons-qu button {
     padding: 10px 20px;
     background-color: #14b8a6; /* Updated navigation button color to teal */
     color: white;
@@ -94,12 +94,13 @@
     transition: background-color 0.3s;
 }
 
-.navigation-buttons button:disabled {
+.navigation-buttons-qu button:disabled {
     background-color: rgba(33, 175, 241, 0.5); /* Light blue for disabled buttons */
     cursor: not-allowed;
 }
 
-.sidebar {
+.sidebar-qu {
+    width:450px;
     flex: 1;
     background-color: #d9e6f1; /* Very light blue for the sidebar */
     padding: 20px;
@@ -109,19 +110,19 @@
     margin-left: 0;
 }
 
-.sidebar h2 {
+.sidebar-qu h2 {
     font-size: 1.5rem;
     color: #1e1b4b; /* Updated sidebar heading color to dark blue-violet */
     margin-bottom: 10px;
 }
 
-.question-numbers {
+.question-numbers-qu {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
 
-.question-number {
+.question-number-qu {
     padding: 10px;
     background-color: #14b8a6; /* Updated question number color to teal */
     border: 2px solid #1E6091;
@@ -132,61 +133,57 @@
     color: #fff;
 }
 
-.question-number.answered {
+.question-number-qu.answered-qu {
     background-color: #1e1b4b; /* Updated answered question color to dark blue-violet */
     color: #fff;
 }
 
-.question-number:hover {
+.question-number-qu:hover {
     background-color: #1E6091; /* Dark blue on hover */
     color: #fff;
 }
 
-.instruction {
+.instruction-qu {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
 }
 
-.status-item {
+.status-item-qu {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.status-indicator {
+.status-indicator-qu {
     display: inline-block;
     width: 16px;
     height: 16px;
     border-radius: 50%;
 }
 
-.not-answered {
+.not-answered-qu {
     background-color: #14b8a6; /* Updated not answered color to teal */
     border: 1px solid #ccc;
 }
 
-.answered {
+.answered-qu {
     background-color: #1e1b4b; /* Updated answered color to dark blue-violet */
+    border: 1px solid #ccc;
 }
 
-.attempted-info {
+.attempted-info-qu {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #D4E7F8; /* Light blue background */
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid #1E6091;
 }
 
-.attempted-info p {
-    margin: 5px 0;
+.attempted-info-qu p {
     font-size: 1rem;
-    color: #184E77; /* Dark blue for text */
+    color: #00477d; /* Medium blue for attempted info text */
+    margin: 5px 0;
 }
 
-.info-label {
+.info-label-qu {
     font-weight: bold;
-    color: #1E6091; /* Medium blue for labels */
+    color: #1e1b4b; /* Updated info label color to dark blue-violet */
 }

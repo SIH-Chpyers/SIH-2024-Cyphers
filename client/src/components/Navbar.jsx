@@ -50,7 +50,7 @@ const Navbar = () => {
       <nav className="navbar">
         <Link exact activeClassName="active" to="/home">Home</Link>
         <div className="dropdown">
-          <Link activeClassName="active" to="/">Notes Enhancer</Link>
+          <Link activeClassName="active" to="/score">Notes Enhancer</Link>
           <div className="dropdown-content">
             <Link activeClassName="active" to="/score">Something</Link>
             <Link activeClassName="active" to="/score">Something</Link>

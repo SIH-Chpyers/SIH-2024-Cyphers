@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './Quizz.css';
+// import './Quizz.css';
+import './Resultpage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Resultpage() {
@@ -52,7 +53,7 @@ function Resultpage() {
 
   return (
     <div className="result-page">
-      <h1 className="title">Quiz Analysis</h1>
+      <h1 className="main-Heading"><span className='Quiz'>Quiz</span> <span className='Analysis'>Analysis</span></h1>
       {score !== null && (
         <div className="score-card">
           <div className="circular-bar">

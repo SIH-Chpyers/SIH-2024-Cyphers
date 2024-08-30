@@ -69,22 +69,24 @@ function Quizz() {
   };
 
   return (
-    <div className="App">
-      <h1>Quiz Game</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="pdf">Upload PDF (PDF only):</label>
-        <input type="file" id="pdf" name="pdf" accept="application/pdf" onChange={handleFileChange} />
-        <br /><br />
-        <label htmlFor="numQuestions">Number of Questions:</label>
-        <input type="number" id="numQuestions" name="numQuestions" min="1" value={numQuestions} onChange={handleNumQuestionsChange} required />
-        <br /><br />
-        <label htmlFor="language">Preferred Language:</label>
-        <input type="text" id="language" name="language" value={language} onChange={handleLanguageChange} placeholder="e.g., Hindi, Spanish" required />
-        <br /><br />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="app-container">
+      <div className="quiz-card">
+        <h1 className="quiz-title"><span className='Quiz'>Quiz </span><span className='Game'> Game</span></h1>
+        <form onSubmit={handleSubmit} className="quiz-form">
+          <label htmlFor="pdf" className="input-label">Upload PDF (PDF only):</label>
+          <input type="file" id="pdf" name="pdf" accept="application/pdf" onChange={handleFileChange} className="input-field" />
+          
+          <label htmlFor="numQuestions" className="input-label">Number of Questions:</label>
+          <input type="number" id="numQuestions" name="numQuestions" min="1" value={numQuestions} onChange={handleNumQuestionsChange} className="input-field" required />
 
-      {loading && <div id="loading" className="spinner"></div>}
+          <label htmlFor="language" className="input-label">Preferred Language:</label>
+          <input type="text" id="language" name="language" value={language} onChange={handleLanguageChange} className="input-field" placeholder="e.g., Hindi, Spanish" required />
+
+          <button type="submit" className="submit-button" disabled={loading}>
+            {loading ? 'Submitting...' : 'Submit'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

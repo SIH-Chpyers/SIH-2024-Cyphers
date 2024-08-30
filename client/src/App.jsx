@@ -50,7 +50,7 @@ function App() {
 
     {
       path: "/score",
-      element: <><Navbar /><Resultpage /></>
+      element: <><Navbar /><Quizz /></>
     },
 
     {
@@ -64,6 +64,12 @@ function App() {
       path: "/Quizpage",
       element: <>
         <Navbar /><Quizpage />
+      </>
+    },
+    {
+      path: "/Resultpage",
+      element: <>
+        <Navbar /><Resultpage />
       </>
     },
     // {
