@@ -168,48 +168,49 @@ function Response() {
   }
 
   return (
-    <div className="containerxb">
-      <h1 className="titlexb">Response Notes</h1>
+      <div className="containerxb">
+        <br/><br/><br/>
+        <h1 className="titlexb">Response Notes</h1>
 
-      {refreshedPdfUrl ? (
-        <div className="pdf-containerxb">
-          <iframe id="pdfPreview" src={refreshedPdfUrl} className="pdf-previewxb" title="PDF Preview"></iframe>
-          <div className="buttonsxb">
-            <button id="fullscreenxb" onClick={handleFullscreen} className="btnxb btn-primaryxb">
-              View Fullscreen
-            </button>
-            <button id="downloadxb" onClick={handleDownload} className="btnxb btn-secondaryxb">
-              Download PDF
-            </button>
-            <button id="ttsxb" onClick={handleTextToSpeech} className="btnxb btn-tertiaryxb">
-              Text-to-Speech
-            </button>
-          </div>
+        {refreshedPdfUrl ? (
+            <div className="pdf-containerxb">
+              <iframe id="pdfPreview" src={refreshedPdfUrl} className="pdf-previewxb" title="PDF Preview"></iframe>
+              <div className="buttonsxb">
+                <button id="fullscreenxb" onClick={handleFullscreen} className="btnxb btn-primaryxb">
+                  View Fullscreen
+                </button>
+                <button id="downloadxb" onClick={handleDownload} className="btnxb btn-secondaryxb">
+                  Download PDF
+                </button>
+                <button id="ttsxb" onClick={handleTextToSpeech} className="btnxb btn-tertiaryxb">
+                  Text-to-Speech
+                </button>
+              </div>
+            </div>
+        ) : (
+            <p>No PDF available</p>
+        )}
+
+        {audioUrl && (
+            <div className="audio-container">
+              <audio controls src={audioUrl}/>
+            </div>
+        )}
+
+        <div className="buttonsxb">
+          <button type="button" onClick={() => navigate('/')} className="btnxb btn-primaryxb">
+            Retake
+          </button>
+          <button
+              type="button"
+              className="btnxb btn-secondaryxb"
+              onClick={handleRefresh}
+              disabled={submitting}
+          >
+            {submitting ? 'Refreshing...' : 'Refresh'}
+          </button>
         </div>
-      ) : (
-        <p>No PDF available</p>
-      )}
-
-      {audioUrl && (
-        <div className="audio-container">
-          <audio controls src={audioUrl} />
-        </div>
-      )}
-
-      <div className="buttonsxb">
-        <button type="button" onClick={() => navigate('/')} className="btnxb btn-primaryxb">
-          Retake
-        </button>
-        <button
-          type="button"
-          className="btnxb btn-secondaryxb"
-          onClick={handleRefresh}
-          disabled={submitting}
-        >
-          {submitting ? 'Refreshing...' : 'Refresh'}
-        </button>
       </div>
-    </div>
   );
 }
 

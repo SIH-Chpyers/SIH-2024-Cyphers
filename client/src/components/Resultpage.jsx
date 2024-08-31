@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './Quizz.css';
+// import './Quizz.css';
+import './Resultpage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Resultpage() {
@@ -24,7 +25,7 @@ function Resultpage() {
       }));
 
       const correctCount = processedAnswers.filter(
-        (answer) => answer.selected === answer.correct
+          (answer) => answer.selected === answer.correct
       ).length;
 
       const calculatedScore = Math.round((correctCount / questions.length) * 100);
@@ -51,73 +52,73 @@ function Resultpage() {
   }, [questions, responses]);
 
   return (
-    <div className="result-page">
-      <h1 className="title">Quiz Analysis</h1>
-      {score !== null && (
-        <div className="score-card">
-          <div className="circular-bar">
-            <svg viewBox="0 0 36 36" className="circular-chart">
-              <path
-                className="circle-bg"
-                d="M18 2.0845
+      <div className="result-page">
+        <h1 className="main-Heading"><span className='Quiz'>Quiz</span> <span className='Analysis'>Analysis</span></h1>
+        {score !== null && (
+            <div className="score-card">
+              <div className="circular-bar">
+                <svg viewBox="0 0 36 36" className="circular-chart">
+                  <path
+                      className="circle-bg"
+                      d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                className="circle"
-                strokeDasharray={`${score}, 100`}
-                d="M18 2.0845
+                  />
+                  <path
+                      className="circle"
+                      strokeDasharray={`${score}, 100`}
+                      d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <text x="18" y="20.35" className="percentage">
-                {score}%
-              </text>
-            </svg>
-          </div>
-          <div className="feedback">{feedback}</div>
-          <div className="score-stats">
-            <div className="stat-item">
-              <span className="stat-label">Attempted:</span> {stats.attempted}
-            </div>
-            <div className="stat-item">
-              <span className="stat-label">Correct:</span> {stats.correct}
-            </div>
-            <div className="stat-item">
-              <span className="stat-label">Incorrect:</span> {stats.incorrect}
-            </div>
-          </div>
-          <div className="answers-details">
-            {selectedAnswers.map((answer, index) => (
-              <div key={index} className={`answer-detail ${answer.selected === answer.correct ? 'correct' : 'incorrect'}`}>
-                <div className="question-text">
-                  {answer.selected === answer.correct ? (
-                    <i className="fas fa-check-circle icon correct-icon"></i>
-                  ) : (
-                    <i className="fas fa-times-circle icon incorrect-icon"></i>
-                  )}
-                  {answer.question}
+                  />
+                  <text x="18" y="20.35" className="percentage">
+                    {score}%
+                  </text>
+                </svg>
+              </div>
+              <div className="feedback">{feedback}</div>
+              <div className="score-stats">
+                <div className="stat-item">
+                  <span className="stat-label">Attempted:</span> {stats.attempted}
                 </div>
-                <div className="options-list">
-                  {answer.options.map(({ option, key }) => (
-                    <div
-                      key={key}
-                      className={`option ${key === answer.correct ? 'correct' : ''} ${key === answer.selected ? 'selected' : ''}`}
-                    >
-                      {option}
-                    </div>
-                  ))}
+                <div className="stat-item">
+                  <span className="stat-label">Correct:</span> {stats.correct}
                 </div>
-                <div className="selected-answer">
-                  <span className="answer-label">Your answer:</span>{' '}
-                  {answer.selected ? answer.options.find((opt) => opt.key === answer.selected)?.option : 'Not answered'}
+                <div className="stat-item">
+                  <span className="stat-label">Incorrect:</span> {stats.incorrect}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
+              <div className="answers-details">
+                {selectedAnswers.map((answer, index) => (
+                    <div key={index} className={`answer-detail ${answer.selected === answer.correct ? 'correct' : 'incorrect'}`}>
+                      <div className="question-text">
+                        {answer.selected === answer.correct ? (
+                            <i className="fas fa-check-circle icon correct-icon"></i>
+                        ) : (
+                            <i className="fas fa-times-circle icon incorrect-icon"></i>
+                        )}
+                        {answer.question}
+                      </div>
+                      <div className="options-list">
+                        {answer.options.map(({ option, key }) => (
+                            <div
+                                key={key}
+                                className={`option ${key === answer.correct ? 'correct' : ''} ${key === answer.selected ? 'selected' : ''}`}
+                            >
+                              {option}
+                            </div>
+                        ))}
+                      </div>
+                      <div className="selected-answer">
+                        <span className="answer-label">Your answer:</span>{' '}
+                        {answer.selected ? answer.options.find((opt) => opt.key === answer.selected)?.option : 'Not answered'}
+                      </div>
+                    </div>
+                ))}
+              </div>
+            </div>
+        )}
+      </div>
   );
 }
 

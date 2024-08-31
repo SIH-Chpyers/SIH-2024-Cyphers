@@ -11,13 +11,11 @@ const PDFDocument = require('pdfkit');
 const app = express();
 const port = 3000;
 
-
 const upload = multer({ dest: 'uploads/' });
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 const genAI = new GoogleGenerativeAI("AIzaSyBcVJ7tcZ2SZkXuA5c5FvSKlZ5n1X1gBE8");
 
@@ -31,7 +29,6 @@ async function getGeminiResponse(prompt) {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-
 
 app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'image', maxCount: 1 }]), async (req, res) => {
   const prompt = req.body.prompt || 'English';
@@ -65,7 +62,6 @@ app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'imag
     const response = await getGeminiResponse(inputPrompt);
     const cleanResponse = response.replace(/\*\**/g, '').replace(/##/g, '--');
 
-
     const lines = cleanResponse.split('\n');
     const structuredText = lines.map(line => {
       if (line.trim().length === 0) return '';
@@ -75,8 +71,8 @@ app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'imag
         return { type: 'subheading', text: line.replace('--', '').trim() };
       } else if (line.startsWith('-')) {
         return { type: 'highlight', text: line.trim() };
-       } else if (line.startsWith('>')) {
-          return { type: 'new', text: line.trim() };
+      } else if (line.startsWith('>')) {
+        return { type: 'new', text: line.trim() };
       } else {
         return { type: 'text', text: line.trim() };
       }
@@ -84,16 +80,14 @@ app.post('/upload', upload.fields([{ name: 'notes', maxCount: 1 }, { name: 'imag
 
     const doc = new PDFDocument();
 
-doc.rect(0, 0, doc.page.width, doc.page.height).fill('#F0FFFF');
+    doc.rect(0, 0, doc.page.width, doc.page.height).fill('#F0FFFF');
 
-const fontPathRegular = path.join(__dirname, 'fonts', 'Exo-Regular.otf');
-const fontPathNothing = path.join(__dirname, 'fonts', 'nothing.otf');
-const fontPathPing = path.join(__dirname, 'fonts', 'Ping.ttf');
-doc.registerFont('CoolFont', fontPathRegular);
-doc.registerFont('NothingFont', fontPathNothing);
-doc.registerFont('Ping', fontPathPing);
-
-
+    const fontPathRegular = path.join(__dirname, 'fonts', 'Exo-Regular.otf');
+    const fontPathNothing = path.join(__dirname, 'fonts', 'nothing.otf');
+    const fontPathPing = path.join(__dirname, 'fonts', 'Ping.ttf');
+    doc.registerFont('CoolFont', fontPathRegular);
+    doc.registerFont('NothingFont', fontPathNothing);
+    doc.registerFont('Ping', fontPathPing);
 
     let pdfData = [];
     doc.on('data', chunk => pdfData.push(chunk));
@@ -105,49 +99,50 @@ doc.registerFont('Ping', fontPathPing);
     });
 
     const imagePathForPDF = path.join(__dirname, 'logo.png');
+
     doc.image(imagePathForPDF, 10, 10, { width: 50 });
+
     doc.on('pageAdded', () => {
+      doc.rect(0, 0, doc.page.width, doc.page.height).fill('#F0FFFF');
       doc.image(imagePathForPDF, 10, 10, { width: 50 });
     });
-
 
     structuredText.forEach(({ type, text }) => {
       if (type === 'heading') {
         doc.font(prompt === 'English' ? 'Ping' : 'Ping')
-          .fontSize(16)
-          .fillColor('maroon')
-          .text(text, { align: 'center' })
-          .moveDown();
+            .fontSize(16)
+            .fillColor('maroon')
+            .text(text, { align: 'center' })
+            .moveDown();
       } else if (type === 'subheading') {
         doc.font(prompt === 'English' ? 'Ping' : 'Ping')
-          .fontSize(15)
-          .fillColor('maroon')
-          .text(text, { align: 'center' })
-          .moveDown();
+            .fontSize(15)
+            .fillColor('maroon')
+            .text(text, { align: 'center' })
+            .moveDown();
       } else if (type === 'highlight') {
         doc.font(prompt === 'English' ? 'CoolFont' : 'Ping')
-          .fontSize(12)
-          .fillColor('green')
-          .text(text)
-          .moveDown();
-      }
-      else if (type === 'new') {
+            .fontSize(12)
+            .fillColor('green')
+            .text(text)
+            .moveDown();
+      } else if (type === 'new') {
         doc.font(prompt === 'English' ? 'CoolFont' : 'Ping')
-          .fontSize(12)
-          .fillColor('yellow')
-          .text(text)
-          .moveDown();
-      }
-      else {
+            .fontSize(12)
+            .fillColor('yellow')
+            .text(text)
+            .moveDown();
+      } else {
         doc.font(prompt === 'English' ? 'Ping' : 'Ping')
-          .fontSize(12)
-          .fillColor('black')
-          .text(text)
-          .moveDown();
+            .fontSize(12)
+            .fillColor('black')
+            .text(text)
+            .moveDown();
       }
     });
 
     doc.end();
+
   } catch (error) {
     res.status(500).json({ error: error.message });
   } finally {
@@ -160,3 +155,5 @@ doc.registerFont('Ping', fontPathPing);
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+ 
+ 

@@ -15,19 +15,31 @@ import Resultpage from './components/Resultpage';
 import Bulletin from './components/Bulletin';
 import Header from './components/Header';
 import Second from './components/Second';
+import Third from './components/Third';
+import Forth from './components/Forth';
+import Fifth from './components/Fifth';
+
+import About from './components/About';
+import Footer from './components/Footer';
+// import  from './components/OurJourney'
+
+
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Button from "./components/Button";
+import OurJourney from "./components/OurJourney";
+
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/home",
-      element: <><Navbar /><Score /></>
+      element: <><Navbar /><Header /><Button/><Second /><Third/><Forth/><Fifth/><Footer/></>
     },
     {
     path: "/",
-    element: <><Navbar /><Header /><Second /></>
-       
+    element: <><Navbar /><Header /><Button/><Second /><Third/><Forth/><Fifth/></>
+
   },
     // {
     //   path: "/score",
@@ -47,9 +59,17 @@ function App() {
       path: "/tts",
       element: <><Navbar /><Tts /></>
     },
+    {
+      path: "/enhance",
+      element: <><Navbar />< Score/></>},
 
     {
-      path: "/score",
+      path: "/about",
+      element: <><Navbar /><About /></>
+    },
+
+    {
+      path: "/Resultpage",
       element: <><Navbar /><Resultpage /></>
     },
 
@@ -66,6 +86,13 @@ function App() {
         <Navbar /><Quizpage />
       </>
     },
+
+    {
+      path: "/OurJourney",
+      element: <>
+        <Navbar /><OurJourney />
+      </>
+    },
     // {
     //   path: "/Resultpage",
     //   element: <>
@@ -74,8 +101,8 @@ function App() {
     // }
   ])
   return (
-    
-    <>     
+
+    <>
       <RouterProvider router={router} />
       {/* <FeatureSection /> */}
       </>
@@ -88,7 +115,7 @@ function App() {
     //   <AboutUs />
     //   <Footer />
     // </div>
-        
+
   )
 }
 

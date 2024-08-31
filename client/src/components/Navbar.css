@@ -5,7 +5,7 @@
   width: 100%;
   padding: 0px 0%;
   background-color: transparent;
-  backdrop-filter: blur(3px);
+  /*backdrop-filter: blur(3px);*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,13 @@
   text-align: left;
   transition: transform 0.3s ease;
 }
+.Ways{
+  color:#14b8a6;
+}
 
+.Bright{
+  color:#1e1b4b;
+}
 .header.hidden {
   transform: translateY(-100%);
 }
@@ -34,8 +40,8 @@
 .navbar a {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  font-size: 15px;
-  color: #FFF;
+  font-size: 17px;
+  color: #1e1b4b;
   font-weight: 700;
   text-decoration: none;
   margin: 0 15px;

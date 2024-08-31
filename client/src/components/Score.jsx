@@ -58,9 +58,11 @@ function Score() {
         <div className="loading">
           <div className="spinner"></div>
         </div>
-      ) : (
+      ) :
+          (
+
         <div className="container">
-          <h1 className="title">Special Child</h1>
+          <h1 className="titlekk">Enhance Begins Here:</h1>
           <p>For The Children With Special Needs</p><br></br>
           <form onSubmit={handleSubmit} className="form">
             <label className="label">
