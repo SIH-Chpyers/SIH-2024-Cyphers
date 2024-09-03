@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import './Quizz.css';
 import './Resultpage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -53,23 +52,21 @@ function Resultpage() {
 
   return (
       <div className="result-page">
-        <h1 className="main-Heading"><span className='Quiz'>Quiz</span> <span className='Analysis'>Analysis</span></h1>
+        <h1 className="main-Heading">
+          <span className='Quiz'>Quiz</span> <span className='Analysis'>Analysis</span>
+        </h1>
         {score !== null && (
             <div className="score-card">
               <div className="circular-bar">
                 <svg viewBox="0 0 36 36" className="circular-chart">
                   <path
                       className="circle-bg"
-                      d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
+                      d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
                   <path
                       className="circle"
                       strokeDasharray={`${score}, 100`}
-                      d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
+                      d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
                   <text x="18" y="20.35" className="percentage">
                     {score}%
@@ -90,7 +87,10 @@ function Resultpage() {
               </div>
               <div className="answers-details">
                 {selectedAnswers.map((answer, index) => (
-                    <div key={index} className={`answer-detail ${answer.selected === answer.correct ? 'correct' : 'incorrect'}`}>
+                    <div
+                        key={index}
+                        className={`answer-detail ${answer.selected === answer.correct ? 'correct' : 'incorrect'}`}
+                    >
                       <div className="question-text">
                         {answer.selected === answer.correct ? (
                             <i className="fas fa-check-circle icon correct-icon"></i>
@@ -110,7 +110,7 @@ function Resultpage() {
                         ))}
                       </div>
                       <div className="selected-answer">
-                        <span className="answer-label">Your answer:</span>{' '}
+                        <span className="answer-label">Your answer:</span>
                         {answer.selected ? answer.options.find((opt) => opt.key === answer.selected)?.option : 'Not answered'}
                       </div>
                     </div>

@@ -37,6 +37,7 @@
 .containerxb {
   max-width: 800px;
   margin: 20px auto;
+  margin-top: 100px;
   padding: 0px;
   background: transparent;
   border-radius: 10px;
@@ -157,8 +158,8 @@
     border: 1px solid #333;
     border-radius: 3px;
     box-sizing: border-box;
-    background-color: #1D232A;
-    color: #f2f2f2;
+    background-color: #ffffff;
+    color: #0b0b0b;
   }
   
   
@@ -362,7 +363,7 @@
   justify-content: center;
   height: 100vh;
   background-image: url('https://static.jobscan.co/blog/uploads/resume_3.webp');
-  background-size: repeat;
+  /*background-size: repeat;*/
   background-position: center;
   position: relative;
   font-family: 'Arial', sans-serif;

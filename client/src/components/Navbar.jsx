@@ -19,7 +19,7 @@ const Navbar = () => {
       }
       setLastScrollY(currentScrollY);
     };
-    
+
 
     window.addEventListener('scroll', handleScroll);
 
@@ -37,7 +37,7 @@ const Navbar = () => {
   if (isLoading) {
     return <Loading />;
   }
-  
+
 
   return (
     <header className={`header ${scrollDirection === 'down' ? 'hidden' : ''}`}>
@@ -50,7 +50,10 @@ const Navbar = () => {
       <nav className="navbar">
         <Link exact activeClassName="active" to="/home">Home</Link>
         <div className="dropdown">
+
           <Link activeClassName="active" to="/enhance">Notes Enhancer</Link>
+
+
         </div>
         <div className="dropdown">
           <Link activeClassName="active" to="/quizz">Quizz</Link>
@@ -59,6 +62,7 @@ const Navbar = () => {
         <Link activeClassName="active" to="/about">About Us</Link>
         <div className="dropdown">
           <Link activeClassName="active" to="/OurJourney">Our Journey</Link>
+          <Link activeClassName="active" to="/Login">Sign Out</Link>
         </div>
       </nav>
     </header>

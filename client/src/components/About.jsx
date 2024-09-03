@@ -38,33 +38,34 @@ const About = () => {
             <section className="about-us-team">
                 <h2>Meet the Team</h2>
                 <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Priyanshu Yadav" />
+
+                    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082694/WhatsApp_Image_2024-08-31_at_11.07.51_rhrxjq.jpg" alt="Priyanshu Yadav" />
                     <h3>Priyanshu Yadav</h3>
                     <p>Team Leader</p>
                 </div>
 
-                <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Team Member" />
+<div className="team-member">
+                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1721506373/kar01_c2gf57.png" alt="Team Member" />
                     <h3>Kartikey Pandey</h3>
                     <p>Lead Developer</p>
                 </div>
                 <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Team Member" />
+                    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082766/WhatsApp_Image_2024-08-31_at_11.08.58_wwz6gu.jpg" alt="Team Member" />
                     <h3>Priyanka Yadav</h3>
                     <p>Lead Developer</p>
                 </div>
                 <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Team Member" />
+                    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082635/WhatsApp_Image_2024-08-31_at_11.05.49_lptqsi.jpg" alt="Team Member" />
                     <h3>Arman Ahmed</h3>
                     <p>Frontend Developer</p>
                 </div>
                 <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Team Member" />
+                    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082957/WhatsApp_Image_2024-08-31_at_11.12.08_l0hvvy.jpg" alt="Team Member" />
                     <h3>Vaishali Yadav</h3>
                     <p>Backend Developer</p>
                 </div>
                 <div className="team-member">
-                    <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1725003949/logo_rhifri.png" alt="Team Member" />
+                    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082953/WhatsApp_Image_2024-08-31_at_11.12.20_vdta4v.jpg" alt="Team Member" />
                     <h3>Riya</h3>
                     <p>Frontend Developer</p>
                 </div>
@@ -81,3 +82,4 @@ const About = () => {
 }
 
 export default About;
+

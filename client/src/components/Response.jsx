@@ -15,13 +15,6 @@ function Response() {
   const [quizQuestions, setQuizQuestions] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     if (pdfUrl) {
       extractTextFromPDF(pdfUrl);
     }
@@ -44,6 +37,8 @@ function Response() {
       console.log('Extracted PDF Text:', text);
     } catch (error) {
       console.error('Error extracting text:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -71,22 +66,6 @@ function Response() {
     }
   };
 
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (pdfUrl) {
-      extractTextFromPDF(pdfUrl);
-    }
-  }, [pdfUrl]);
-
-
-
   const handleFullscreen = () => {
     const pdfPreview = document.getElementById('pdfPreview');
     if (pdfPreview.requestFullscreen) {
@@ -113,7 +92,7 @@ function Response() {
     try {
       const response = await fetch(refreshedPdfUrl);
       if (!response.ok) throw new Error('Failed to fetch PDF');
-      
+
       const blob = await response.blob();
       const formData = new FormData();
       formData.append('notes', blob, 'response.pdf');
@@ -130,6 +109,7 @@ function Response() {
       setRefreshedPdfUrl(newUrl);
     } catch (error) {
       console.error('Error:', error);
+      alert('Failed to refresh PDF.');
     } finally {
       setSubmitting(false);
     }
@@ -155,23 +135,23 @@ function Response() {
       setAudioUrl(URL.createObjectURL(audioBlob));
     } catch (error) {
       console.error('Error:', error);
+      alert('Failed to generate speech.');
     }
   };
 
   if (isLoading) {
     return (
-      <div className="containerxb loadingxb">
-        <div className="spinnerxb"></div>
-        <h1>Loading...</h1>
-      </div>
+        <div className="containerxb loadingxb">
+          <div className="spinnerxb"></div>
+          <h1>Loading...</h1>
+        </div>
     );
   }
 
   return (
       <div className="containerxb">
-        <br/><br/><br/>
         <h1 className="titlexb">Response Notes</h1>
-
+<br/>
         {refreshedPdfUrl ? (
             <div className="pdf-containerxb">
               <iframe id="pdfPreview" src={refreshedPdfUrl} className="pdf-previewxb" title="PDF Preview"></iframe>
@@ -193,7 +173,7 @@ function Response() {
 
         {audioUrl && (
             <div className="audio-container">
-              <audio controls src={audioUrl}/>
+              <audio controls src={audioUrl} />
             </div>
         )}
 
