@@ -12,7 +12,7 @@ const Second = () => {
                   onMouseOver={(e) => e.currentTarget.style.transform = styles.imageHover.transform}
                   onMouseOut={(e) => e.currentTarget.style.transform = 'none'}
               />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
               <img
                   src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725046115/c681dea2d63af62a11baee19065bdc03-removebg-preview_ghfgxe.png"
                   alt="Right Image"
@@ -44,12 +44,6 @@ const Second = () => {
               accessible to all.
               We believe our website doesn’t just teach—it inspires,<br/> motivates, and adapts to the needs of each
               student.<br/><br/>
-
-              {/*<div className="ladki">*/}
-              {/*    <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725045373/College_Graduation_Hd_Transparent__Teenage_College_Graduation_Season__College_Student__Graduation_Season__Professional_PNG_Image_For_Free_Download-removebg-preview_wud9eg.png"/>*/}
-              {/*    <p></p>*/}
-              {/*</div>*/}
-
 
               <br></br><br></br>
 

@@ -1,13 +1,6 @@
 import React from 'react';
 import './About.css';
 
-// import priyanshu from '../images/priyanshu.png';
-// import kartikey from '../images/kartikey.png';
-// import priyanka from '../images/priyanka.png';
-// import arman from '../images/arman.png';
-// import vaishali from '../images/vaishali.png';
-// import riya from '../images/riya.png';
-
 const About = () => {
     return (
         <div className="about-us-container">
@@ -47,12 +40,12 @@ const About = () => {
 <div className="team-member">
                     <img src="https://res.cloudinary.com/dnsjdvzdn/image/upload/v1721506373/kar01_c2gf57.png" alt="Team Member" />
                     <h3>Kartikey Pandey</h3>
-                    <p>Lead Developer</p>
+                    <p>Full Stack Developer</p>
                 </div>
                 <div className="team-member">
                     <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082766/WhatsApp_Image_2024-08-31_at_11.08.58_wwz6gu.jpg" alt="Team Member" />
                     <h3>Priyanka Yadav</h3>
-                    <p>Lead Developer</p>
+                    <p>Full Stack Developer</p>
                 </div>
                 <div className="team-member">
                     <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082635/WhatsApp_Image_2024-08-31_at_11.05.49_lptqsi.jpg" alt="Team Member" />
@@ -62,7 +55,7 @@ const About = () => {
                 <div className="team-member">
                     <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082957/WhatsApp_Image_2024-08-31_at_11.12.08_l0hvvy.jpg" alt="Team Member" />
                     <h3>Vaishali Yadav</h3>
-                    <p>Backend Developer</p>
+                    <p>Frontend Developer</p>
                 </div>
                 <div className="team-member">
                     <img src="https://res.cloudinary.com/dlhktanwi/image/upload/v1725082953/WhatsApp_Image_2024-08-31_at_11.12.20_vdta4v.jpg" alt="Team Member" />
