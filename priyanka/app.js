@@ -13,9 +13,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 
 const app = express();
 
-
 app.use(cors());
-
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -28,27 +26,26 @@ app.get('/', (req, res) => {
 
 app.post('/upload', upload.single('pdf'), async (req, res) => {
   try {
-      const data = await pdfParse(req.file.buffer);
-      const pdfText = data.text;
+    const data = await pdfParse(req.file.buffer);
+    const pdfText = data.text;
 
-      const { numQuestions, language } = req.body;
-      if (!numQuestions || isNaN(numQuestions) || numQuestions <= 0) {
-          return res.status(400).json({ error: 'Invalid number of questions' });
-      }
+    const { numQuestions, language } = req.body;
+    if (!numQuestions || isNaN(numQuestions) || numQuestions <= 0) {
+      return res.status(400).json({ error: 'Invalid number of questions' });
+    }
 
-      if (!language) {
-          return res.status(400).json({ error: 'Language preference is required' });
-      }
+    if (!language) {
+      return res.status(400).json({ error: 'Language preference is required' });
+    }
 
-      const questions = await questionGenerator(pdfText, numQuestions, language);
+    const questions = await questionGenerator(pdfText, numQuestions, language);
 
-      res.json({ questions });
+    res.json({ questions });
   } catch (err) {
-      console.error('Error processing PDF and generating quiz:', err.message);
-      res.status(500).json({ error: 'Failed to process PDF and generate quiz' });
+    console.error('Error processing PDF and generating quiz:', err.message);
+    res.status(500).json({ error: 'Failed to process PDF and generate quiz' });
   }
 });
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
@@ -79,19 +76,24 @@ async function questionGenerator(text, numQuestions, language) {
   Ensure each question object strictly adheres to this format and generate exactly ${numQuestions} questions. IN ${language} LANGUAGE`;
 
   try {
-      const result = await model.generateContent(finalPrompt);
-      const responseText = result.response.text();
+    const result = await model.generateContent(finalPrompt);
+    const responseText = result.response.text();
+    
+    // console.log('API Response:', responseText);
 
+    const jsonMatch = responseText.match(/\[.*?\]/s);
+    if (!jsonMatch) {
+      throw new Error('No valid JSON array found in the response');
+    }
 
-      const jsonMatch = responseText.match(/\[.*?\]/s);
-      if (!jsonMatch) {
-          throw new Error('No valid JSON array found in the response');
-      }
+    const questions = JSON.parse(jsonMatch[0]);
+    if (questions.length > numQuestions) {
+      console.warn(`Generated more questions than requested: ${questions.length}`);
+    }
 
-      const questions = JSON.parse(jsonMatch[0]);
-      return questions;
+    return questions.slice(0, numQuestions);
   } catch (error) {
-      console.error('Error generating questions:', error);
-      return [];
+    console.error('Error generating questions:', error);
+    return [];
   }
 }
