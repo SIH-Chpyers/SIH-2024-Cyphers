@@ -15,13 +15,11 @@
   transition: transform 0.3s ease;
 }
 .Ways{
-  color: #067568;
-  border-color: #1e1b4b;
+  color:#1C8682;
 }
 
 .Bright{
   color:#1e1b4b;
-
 }
 .header.hidden {
   transform: translateY(-100%);
