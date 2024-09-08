@@ -6,7 +6,7 @@ const Quizpage = () => {
     const [questions, setQuestions] = useState([]);
     const [responses, setResponses] = useState({});
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [loading, setLoading] = useState(false); // Add loading state
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,10 +38,10 @@ const Quizpage = () => {
     };
 
     const handleSubmit = () => {
-        setLoading(true); // Set loading to true during submission
-        setTimeout(() => { // Simulate async operation
+        setLoading(true);
+        setTimeout(() => {
             navigate('/Resultpage', { state: { questions, responses } });
-        }, 1000); // Adjust the delay as needed
+        }, 1000);
     };
 
     const renderQuestionNumbers = () => (
@@ -100,7 +100,7 @@ const Quizpage = () => {
                                     <button
                                         type="button"
                                         onClick={handleSubmit}
-                                        disabled={loading} // Disable button when loading
+                                        disabled={loading}
                                     >
                                         {loading ? 'Submitting...' : 'Submit'}
                                     </button>
