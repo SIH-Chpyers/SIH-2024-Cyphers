@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Quizz.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+
 function Quizz() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -70,7 +71,7 @@ function Quizz() {
 
   return (
       <div className="app-container">
-        <div className="quiz-card">
+        {/*<div className="quiz-card">*/}
           <h1 className="quiz-title"><span className='Quiz'>Quiz </span><span className='Game'> Game</span></h1>
           <form onSubmit={handleSubmit} className="quiz-form">
             <label htmlFor="pdf" className="input-label">Upload PDF (PDF only):</label>
@@ -86,7 +87,7 @@ function Quizz() {
               {loading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
-        </div>
+        {/*</div>*/}
       </div>
   );
 }
