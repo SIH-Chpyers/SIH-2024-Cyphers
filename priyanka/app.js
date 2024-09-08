@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const pdfParse = require('pdf-parse');
+const tesseract = require('tesseract.js');
 const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
@@ -24,10 +25,18 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/upload', upload.single('pdf'), async (req, res) => {
+app.post('/upload', upload.single('file'), async (req, res) => {
   try {
-    const data = await pdfParse(req.file.buffer);
-    const pdfText = data.text;
+    let text = '';
+
+    if (req.file.mimetype === 'application/pdf') {
+      const data = await pdfParse(req.file.buffer);
+      text = data.text;
+    } else if (req.file.mimetype.startsWith('image/')) {
+      text = await extractTextFromImage(req.file.buffer);
+    } else {
+      return res.status(400).json({ error: 'Unsupported file type' });
+    }
 
     const { numQuestions, language } = req.body;
     if (!numQuestions || isNaN(numQuestions) || numQuestions <= 0) {
@@ -38,12 +47,11 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
       return res.status(400).json({ error: 'Language preference is required' });
     }
 
-    const questions = await questionGenerator(pdfText, numQuestions, language);
-
+    const questions = await questionGenerator(text, numQuestions, language);
     res.json({ questions });
   } catch (err) {
-    console.error('Error processing PDF and generating quiz:', err.message);
-    res.status(500).json({ error: 'Failed to process PDF and generate quiz' });
+    console.error('Error processing file and generating quiz:', err.message);
+    res.status(500).json({ error: 'Failed to process file and generate quiz' });
   }
 });
 
@@ -51,6 +59,16 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+async function extractTextFromImage(imageBuffer) {
+  try {
+    const result = await tesseract.recognize(imageBuffer, 'eng');
+    return result.data.text;
+  } catch (error) {
+    console.error('Error extracting text from image:', error);
+    throw new Error('Failed to extract text from image');
+  }
+}
 
 async function questionGenerator(text, numQuestions, language) {
   const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro-latest' });
@@ -78,8 +96,9 @@ async function questionGenerator(text, numQuestions, language) {
   try {
     const result = await model.generateContent(finalPrompt);
     const responseText = result.response.text();
-    
-    // console.log('API Response:', responseText);
+
+    // Log the raw response text for debugging
+    // console.log('Raw API Response:', responseText);
 
     const jsonMatch = responseText.match(/\[.*?\]/s);
     if (!jsonMatch) {
@@ -97,3 +116,4 @@ async function questionGenerator(text, numQuestions, language) {
     return [];
   }
 }
+
