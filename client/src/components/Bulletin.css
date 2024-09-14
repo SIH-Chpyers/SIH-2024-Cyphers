@@ -1,127 +1,96 @@
 .bulletin-board {
-    background-color: rgba(245, 245, 245, 0.9);
+    background: linear-gradient(135deg, #a8c954, #32BD7E);
     padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    margin: 10px auto;
-    margin-top: 100px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 80px;
+    overflow: hidden;
 }
+
 
 .bulletin-heading {
     text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 2.8em;
+    color: #cb6363;
+    margin-bottom: 30px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
 }
 
 .bulletin-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .bulletin-card {
-    background-color: white;
+    background-size: cover;
+    background-position: center;
+ 
+    color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #2196f3;
+}
+
+.bulletin-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+.bulletin-card-content {
+    position: relative;
+    z-index: 1;
 }
 
 .bulletin-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .bulletin-title {
-    font-size: 1.5em;
-    color: #444;
-    margin-bottom: 10px;
+    font-size: 1.6em;
+    color: #fff;
+    margin-bottom: 12px;
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 .bulletin-content {
     font-size: 1em;
-    color: #666;
+    color: #eee;
     margin-bottom: 15px;
     font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
 }
 
 .bulletin-date {
     font-size: 0.9em;
-    color: #999;
+    color: #ccc;
     margin-bottom: 20px;
     font-style: italic;
 }
 
 .bulletin-link {
     text-decoration: none;
-    color: #2196f3;
+    color: #4fc3f7;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .bulletin-link:hover {
-    color: #0d47a1;
-}
-
-@media (max-width: 1024px) {
-    .bulletin-container {
-        grid-template-columns: 1fr;
-        margin: 10px;
-    }
-
-    .bulletin-heading {
-        font-size: 2em;
-    }
-
-    .bulletin-card {
-        padding: 15px;
-    }
-
-    .bulletin-title {
-        font-size: 1.3em;
-    }
-
-    .bulletin-content {
-        font-size: 0.9em;
-    }
-
-    .bulletin-date {
-        font-size: 0.85em;
-    }
-}
-
-@media (max-width: 768px) {
-    .bulletin-board {
-        padding: 30px 15px;
-        margin: 10px;
-        margin-top: 100px;
-    }
-
-    .bulletin-heading {
-        font-size: 1.8em;
-    }
-
-    .bulletin-card {
-        padding: 10px;
-    }
-
-    .bulletin-title {
-        font-size: 1.2em;
-    }
-
-    .bulletin-content {
-        font-size: 0.85em;
-    }
-
-    .bulletin-date {
-        font-size: 0.8em;
-    }
-
-    .bulletin-link {
-        font-size: 0.95em;
-    }
+    color: #0288d1;
 }
