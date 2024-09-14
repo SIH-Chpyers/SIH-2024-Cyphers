@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="about-us-container">
             <section className="about-us-intro">
-                <h1>About BrightWays</h1>
+                <h1>About <span className='Bright'>Bright</span><span className='Ways'>Ways</span></h1>
                 <p>
                     Welcome to BrightWays, an application dedicated to supporting children with special needs and their caregivers. Our mission is to provide valuable resources, tools, and a supportive community to help children learn, grow, and thrive.
                 </p>

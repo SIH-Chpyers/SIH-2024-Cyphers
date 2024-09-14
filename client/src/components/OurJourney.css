@@ -1,72 +1,18 @@
-.our-journey-container {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top:200px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.journey-intro,
-.journey-story,
-.journey-gallery {
-    margin-bottom: 30px;
-}
-
-h1,
-h2 {
-    color: #1790E3;
-    text-align: center;
-}
-
-.journey-intro p,
-.journey-story p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.journey-gallery .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 15px;
-}
-
-.journey-gallery img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.journey-gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Import Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Apply global styles for the Poppins font */
 body {
     font-family: 'Poppins', sans-serif;
-    /* Updated to use Poppins font */
+    margin: 0;
+    padding: 0;
 }
 
 .our-journey-container {
     padding: 40px;
-    max-width: 800px;
-    margin: 60px auto 0;
-    /* This adds margin only to the top */
-    font-family: 'Poppins', sans-serif;
-    /* Updated to use Poppins */
+    max-width: 900px;
+    margin: 10px auto;
+    margin-top: 100px;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -81,8 +27,15 @@ h1,
 h2 {
     color: #1790E3;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    /* Updated to use Poppins font */
+    padding: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 .journey-intro p,
@@ -90,15 +43,15 @@ h2 {
     font-size: 1.2em;
     line-height: 1.6;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    /* Updated to use Poppins font */
 }
+
 
 .journey-gallery .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 15px;
+    padding: 0 10px;
 }
 
 .journey-gallery img {
@@ -112,4 +65,86 @@ h2 {
 
 .journey-gallery img:hover {
     transform: scale(1.05);
+}
+
+
+@media (max-width: 1024px) {
+    .our-journey-container {
+        padding: 30px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .journey-intro p,
+    .journey-story p {
+        font-size: 1.1em;
+    }
+
+    .journey-gallery img {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-journey-container {
+        padding: 20px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .journey-intro p,
+    .journey-story p {
+        font-size: 1em;
+    }
+
+    .journey-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .journey-gallery img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-journey-container {
+        padding: 15px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .journey-intro p,
+    .journey-story p {
+        font-size: 0.9em;
+    }
+
+    .journey-gallery img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
 }

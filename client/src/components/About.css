@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Apply global styles for the Poppins font */
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* About Us container styling */
 .about-us-container {
     padding: 40px;
-    max-width: 800px;
-    margin: 60px auto 0; /* Top margin only */
-    font-family: 'Poppins', sans-serif;
+    padding-top: 20px;
+    max-width: 900px;
+    margin: 10px auto;
+    margin-top: 100px;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Section margins */
 .about-us-intro,
 .about-us-mission,
 .about-us-features,
@@ -26,31 +26,37 @@ body {
     margin-bottom: 30px;
 }
 
-/* Headings styling */
 h1,
 h2 {
     color: #1790E3;
     text-align: center;
+    padding: 0.5rem;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Paragraph styling for intro section */
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
 .about-us-intro p {
     font-size: 1.2em;
     line-height: 1.6;
     text-align: center;
 }
 
-/* Paragraph styling for mission section */
 .about-us-mission p {
     font-size: 1.1em;
     line-height: 1.6;
 }
 
-/* Features list styling */
 .about-us-features ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .about-us-features li {
@@ -67,7 +73,6 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* Team member styling */
 .team-member {
     text-align: center;
     margin: 20px 0;
@@ -79,6 +84,11 @@ h2 {
     height: 150px;
     object-fit: cover;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
 }
 
 .team-member h3 {
@@ -86,7 +96,6 @@ h2 {
     color: #333;
 }
 
-/* Contact section styling */
 .about-us-contact p {
     text-align: center;
 }
@@ -94,9 +103,97 @@ h2 {
 .about-us-contact a {
     color: #1790E3;
     text-decoration: none;
+    transition: text-decoration 0.3s ease;
 }
 
 .about-us-contact a:hover {
     text-decoration: underline;
+}
 
+@media (max-width: 1024px) {
+    .about-us-container {
+        padding: 30px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 1em;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-container {
+        padding: 20px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 0.9em;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .about-us-features li {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us-container {
+        padding: 15px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 0.8em;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about-us-features li {
+        font-size: 0.8em;
+        padding: 6px;
+    }
 }
