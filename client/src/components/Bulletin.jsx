@@ -2,8 +2,8 @@ import React from 'react';
 import './Bulletin.css';
 
 const getRandomDate = () => {
-    const start = new Date(2024, 0, 1); // Starting date
-    const end = new Date(); // Today's date
+    const start = new Date(2024, 0, 1); 
+    const end = new Date();
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toLocaleDateString();
 };
 

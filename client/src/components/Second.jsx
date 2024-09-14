@@ -81,7 +81,7 @@ const styles = {
     },
     textOutline: {
 
-        textShadow: '1px 1px 3px #1790E3;, -1px -1px 3px #1790E3;, 1px -1px 3px #1790E3;, -1px 1px 3px #1790E3;',
+        textShadow: '1px 1px 3px #1790E3, -1px -1px 3px #1790E3, 1px -1px 3px #1790E3, -1px 1px 3px #1790E3'
     },
     container: {
         display: 'flex',

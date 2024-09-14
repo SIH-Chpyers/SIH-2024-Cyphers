@@ -53,7 +53,7 @@ const styles = {
         backgroundColor: 'rgba(255, 255, 255, 0.05)',
     },
     ol: {
-        listStyleType: 'lower-roman', // This sets the list style to Roman numerals
+        listStyleType: 'lower-roman',
         paddingLeft: '20px',
         marginTop: '20px',
     },

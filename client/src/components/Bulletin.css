@@ -1,5 +1,5 @@
 .bulletin-board {
-    background-color: #f5f5f5;
+    background-color: rgba(245, 245, 245,0.9);
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -65,4 +65,60 @@
 
 .bulletin-link:hover {
     color: #0d47a1;
+}
+
+@media (max-width: 1024px) {
+    .bulletin-container {
+        grid-template-columns: 1fr; 
+    }
+    
+    .bulletin-heading {
+        font-size: 2em; 
+    }
+    
+    .bulletin-card {
+        padding: 15px;
+    }
+    
+    .bulletin-title {
+        font-size: 1.3em; 
+    }
+
+    .bulletin-content {
+        font-size: 0.9em; 
+    }
+
+    .bulletin-date {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 768px) {
+    .bulletin-board {
+        padding: 30px 15px; 
+    }
+
+    .bulletin-heading {
+        font-size: 1.8em; 
+    }
+
+    .bulletin-card {
+        padding: 10px;
+    }
+
+    .bulletin-title {
+        font-size: 1.2em;
+    }
+
+    .bulletin-content {
+        font-size: 0.85em; 
+    }
+
+    .bulletin-date {
+        font-size: 0.8em; 
+    }
+
+    .bulletin-link {
+        font-size: 0.95em;
+    }
 }

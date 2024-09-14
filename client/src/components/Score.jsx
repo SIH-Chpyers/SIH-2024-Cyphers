@@ -43,7 +43,6 @@ function Score() {
         const url = URL.createObjectURL(blob);
         setPdfUrl(url);
         setSubmitting(false);
-        // Navigate to the response page with the PDF URL
         navigate('/response', { state: { pdfUrl: url } });
       })
       .catch((error) => {
