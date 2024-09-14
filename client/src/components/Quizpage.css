@@ -32,7 +32,7 @@
     width: 500px;
     background-color: #d9e6f1;
     padding: 20px;
-    margin-right: 0;
+    margin-right: 50px;
     margin-left: 150px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(222, 147, 147, 0.1);
@@ -45,12 +45,6 @@
     margin-bottom: 20px;
     font-weight: bold;
     line-height: 1.5;
-}
-
-.options-qu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .options-qu label {
@@ -186,4 +180,93 @@
 .info-label-qu {
     font-weight: bold;
     color: #1e1b4b;
+}
+
+
+.quiz-page-qu {
+    height: auto;
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: rgba(193, 235, 227, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(222, 210, 210, 0.1);
+    backdrop-filter: blur(1.5px);
+    font-family: 'Arial', sans-serif;
+}
+
+.options-qu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 1024px) {
+    .quiz-container-qu {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .question-container-qu, .sidebar-qu {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .sidebar-qu {
+        margin-top: 20px;
+    }
+
+    .question-numbers-qu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz-container-qu {
+        flex-direction: column;
+       
+    }
+
+    .question-container-qu, .sidebar-qu {
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 90%;
+        padding: 15px;
+    }
+
+    .question-numbers-qu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .question-container-qu p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .quiz-container-qu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .question-container-qu, .sidebar-qu {
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .question-numbers-qu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .question-container-qu p {
+        font-size: 1.1rem;
+    }
+
+    .navigation-buttons-qu button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
 }

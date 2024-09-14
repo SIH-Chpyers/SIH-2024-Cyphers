@@ -1,10 +1,5 @@
-
 import React from 'react';
 import './OurJourney.css';
-
-// import im1 from './im1.jpeg'; // Adjust the path according to your folder structure
-// import im2 from './im2.jpeg';/**/
-// import im3 from './im3.jpeg';
 
 const OurJourney = () => {
     return (
