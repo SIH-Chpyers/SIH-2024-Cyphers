@@ -36,9 +36,9 @@ General Styles body {
 
 .quiz-title {
 
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -57,16 +57,6 @@ General Styles body {
     padding: 10px;
 }
 
-.input-labelx {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-    text-align: left;
-    width: 100%;
-
-
-}
-
 .input-field {
 
     margin-left: 10px;
@@ -81,7 +71,7 @@ General Styles body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s, box-shadow 0.3s;
     width: 640px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .input-field:focus {
@@ -89,6 +79,15 @@ General Styles body {
     box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
 }
 
+.input-label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #b8b7b7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px #000;
+    transition: transform 0.8s ease-in-out;
+}
 
 .submit-button {
     padding: 12px 20px;
