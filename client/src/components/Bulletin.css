@@ -1,5 +1,5 @@
 .bulletin-board {
-    background: linear-gradient(135deg, #a8c954, #32BD7E);
+    background: linear-gradient(135deg, rgba(168, 201, 84 , 0.7), rgba(50, 189, 126,0.7));
     padding: 40px 20px;
     border-radius: 12px;
     box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
@@ -13,7 +13,7 @@
 .bulletin-heading {
     text-align: center;
     font-size: 2.8em;
-    color: #cb6363;
+    color: #e44040;
     margin-bottom: 30px;
     font-family: 'Comfortaa', cursive;
     font-weight: 700;
@@ -46,7 +46,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(1px);
     z-index: 0;
 }
