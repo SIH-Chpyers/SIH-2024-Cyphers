@@ -17,7 +17,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2  {
+h1,
+h2 {
     color: #1790E3;
     text-align: center;
     padding: 0.5rem;
@@ -31,10 +32,8 @@ h2 {
     font-size: 2em;
 }
 
-.about-us-intro p, 
-.about-us-mission p
-
- {
+.about-us-intro p,
+.about-us-mission p {
     font-size: 1.2em;
     line-height: 1.6;
     text-align: center;
@@ -87,7 +86,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-.about-us-contact h2{
+.about-us-contact h2 {
     color: #1790E3;
     text-align: center;
     padding: 0.3rem;
@@ -98,11 +97,13 @@ h2 {
     text-align: center;
     font-size: 0.9rem;
 }
+
 .about-us-contact a {
     color: #1790E3;
     text-decoration: none;
     transition: text-decoration 0.3s ease;
 }
+
 .about-us-contact a:hover {
     text-decoration: underline;
 }
@@ -113,25 +114,29 @@ h2 {
         margin: 10px;
         margin-top: 100px;
     }
+
     h1 {
         font-size: 2em;
     }
+
     h2 {
         font-size: 1.7em;
     }
+
     .about-us-intro p,
     .about-us-mission p {
         font-size: 1em;
     }
+
     .team-member img {
         width: 120px;
         height: 120px;
     }
 
-    .about-us-contact h2{
+    .about-us-contact h2 {
         font-size: 1.5rem;
     }
-    
+
     .about-us-contact p {
         font-size: 0.85rem;
     }
@@ -168,10 +173,10 @@ h2 {
     }
 
 
-    .about-us-contact h2{
+    .about-us-contact h2 {
         font-size: 1.3rem;
     }
-    
+
     .about-us-contact p {
         font-size: 0.8rem;
     }
@@ -210,10 +215,10 @@ h2 {
         height: 100px;
     }
 
-    .about-us-contact h2{
+    .about-us-contact h2 {
         font-size: 1.1rem;
     }
-    
+
     .about-us-contact p {
         font-size: 0.75rem;
     }
