@@ -1,96 +1,99 @@
 .bulletin-board {
-    background: linear-gradient(135deg, rgba(168, 201, 84 , 0.7), rgba(50, 189, 126,0.7));
-    padding: 40px 20px;
-    border-radius: 12px;
-    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
-    max-width: 1150px;
-    margin: 0 auto;
-    margin-top: 80px;
-    overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 201, 84, 0.7),
+    rgba(50, 189, 126, 0.7)
+  );
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+  max-width: 1150px;
+  margin: 0 auto;
+  margin-top: 80px;
+  overflow: hidden;
 }
 
-
 .bulletin-heading {
-    text-align: center;
-    font-size: 2.8em;
-    color: #e44040;
-    margin-bottom: 30px;
-    font-family: 'Comfortaa', cursive;
-    font-weight: 700;
+  text-align: center;
+  font-size: 2.8em;
+  color: #e44040;
+  margin-bottom: 30px;
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
 }
 
 .bulletin-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .bulletin-card {
-    background-size: cover;
-    background-position: center;
- 
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-left: 5px solid #2196f3;
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid #2196f3;
 }
 
 .bulletin-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(1px);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  z-index: 0;
 }
 
 .bulletin-card-content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .bulletin-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .bulletin-title {
-    font-size: 1.6em;
-    color: #fff;
-    margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+  font-size: 1.6em;
+  color: #fff;
+  margin-bottom: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 .bulletin-content {
-    font-size: 1em;
-    color: #eee;
-    margin-bottom: 15px;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
+  font-size: 1em;
+  color: #eee;
+  margin-bottom: 15px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
 }
 
 .bulletin-date {
-    font-size: 0.9em;
-    color: #ccc;
-    margin-bottom: 20px;
-    font-style: italic;
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 .bulletin-link {
-    text-decoration: none;
-    color: #4fc3f7;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #4fc3f7;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .bulletin-link:hover {
-    color: #0288d1;
+  color: #0288d1;
 }
