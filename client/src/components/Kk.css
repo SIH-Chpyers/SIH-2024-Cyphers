@@ -219,9 +219,7 @@ textarea {
   color: #1e1b4b;
   text-align: center;
   margin-bottom: 20px;
-  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
   font-weight: bold;
-  /*text-shadow: 2px 2px 4px #000;*/
 }
 
 .label {
@@ -308,7 +306,6 @@ textarea {
   justify-content: center;
   height: 100vh;
   background-image: url("https://static.jobscan.co/blog/uploads/resume_3.webp");
-  /*background-size: repeat;*/
   background-position: center;
   position: relative;
   font-family: "Arial", sans-serif;

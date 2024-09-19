@@ -57,7 +57,6 @@ General Styles body {
 .input-field {
   margin-left: 10px;
   display: flex;
-  margin-top: 10px;
   padding: 10px;
   font-size: 15px;
   color: #333;
@@ -67,7 +66,6 @@ General Styles body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s, box-shadow 0.3s;
   width: 640px;
-  /* margin-bottom: 15px; */
 }
 
 .input-field:focus {
@@ -77,7 +75,7 @@ General Styles body {
 
 .input-label {
   display: block;
-  margin-top: 10px;
+  margin-bottom: 15px;
   font-size: 13px;
   color: #b8b7b7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
