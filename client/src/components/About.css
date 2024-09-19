@@ -10,13 +10,14 @@ body {
     padding: 40px;
     padding-top: 20px;
     max-width: 1090px;
-    margin: 65px auto;
+    margin: 10px auto;
+    margin-top: 100px;
     background-color: rgba(249, 249, 249, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1, h2  {
     color: #1790E3;
     text-align: center;
     padding: 0.5rem;
@@ -31,8 +32,9 @@ h2 {
 }
 
 .about-us-intro p, 
-.about-us-mission p, 
-.about-us-contact p {
+.about-us-mission p
+
+ {
     font-size: 1.2em;
     line-height: 1.6;
     text-align: center;
@@ -44,6 +46,7 @@ h2 {
 }
 
 .about-us-features li {
+    font-size: 1.1em;
     background: #dce0df;
     margin: 10px 0;
     padding: 10px;
@@ -84,12 +87,66 @@ h2 {
     margin-bottom: 10px;
 }
 
+.about-us-contact h2{
+    color: #1790E3;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 1.7rem;
+}
 
+.about-us-contact p {
+    text-align: center;
+    font-size: 0.9rem;
+}
+.about-us-contact a {
+    color: #1790E3;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+.about-us-contact a:hover {
+    text-decoration: underline;
+}
 
+@media (max-width: 1024px) {
+    .about-us-container {
+        padding: 30px;
+        margin: 10px;
+        margin-top: 100px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.7em;
+    }
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 1em;
+    }
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-us-contact h2{
+        font-size: 1.5rem;
+    }
+    
+    .about-us-contact p {
+        font-size: 0.85rem;
+    }
+
+    .about-us-features li {
+        font-size: 1em;
+        padding: 9px;
+    }
+}
 
 @media (max-width: 768px) {
     .about-us-container {
         padding: 20px;
+        margin: 10px;
+        margin-top: 100px;
     }
 
     h1 {
@@ -100,15 +157,39 @@ h2 {
         font-size: 1.5em;
     }
 
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 0.9em;
+    }
+
     .team-member img {
         width: 110px;
         height: 110px;
     }
+
+
+    .about-us-contact h2{
+        font-size: 1.3rem;
+    }
+    
+    .about-us-contact p {
+        font-size: 0.8rem;
+    }
+
+
+    .about-us-features li {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+
 }
 
 @media (max-width: 480px) {
     .about-us-container {
         padding: 15px;
+        margin: 10px;
+        margin-top: 100px;
     }
 
     h1 {
@@ -119,8 +200,27 @@ h2 {
         font-size: 1.3em;
     }
 
+    .about-us-intro p,
+    .about-us-mission p {
+        font-size: 0.8em;
+    }
+
     .team-member img {
         width: 100px;
         height: 100px;
+    }
+
+    .about-us-contact h2{
+        font-size: 1.1rem;
+    }
+    
+    .about-us-contact p {
+        font-size: 0.75rem;
+    }
+
+
+    .about-us-features li {
+        font-size: 0.8em;
+        padding: 6px;
     }
 }
